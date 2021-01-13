@@ -1,0 +1,16 @@
+<h2>Dealer service info Search Page</h2>
+
+
+<app-search-form
+*ngIf="dealerServiceData.length === 0"
+[errors]="errors"
+(onSubmit)="searchDealerInfoData($event)"></app-search-form>
+
+<!-- <div *ngIf="dealerServiceData.length !== 0">
+    <app-list-dealer-info-data [data]="dealerServiceData"></app-list-dealer-info-data>
+</div> -->
+
+<div *ngIf="dealerServiceData.length !== 0">
+    <app-list-dealer-info-data (onSubmit)[data]="dealerServiceData"
+    ></app-list-dealer-info-data>
+</div>
