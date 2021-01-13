@@ -11,6 +11,6 @@
 </div> -->
 
 <div *ngIf="dealerServiceData.length !== 0">
-    <app-list-dealer-info-data (onSubmit)[data]="dealerServiceData"
+    <app-list-dealer-info-data [dealerServiceData]="dealerServiceData"
     ></app-list-dealer-info-data>
 </div>

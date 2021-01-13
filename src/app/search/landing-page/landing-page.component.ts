@@ -32,13 +32,14 @@ export class LandingPageComponent implements OnInit {
   RecordsToShowQty = 10;
 
   searchDealerInfoData(email: any) {
+    console.log('searchDealerInfoData');
     this.dealerServiceData = [];
     this.dealerInfo.Email = email
     this.dealerDataService.getAll(this.dealerInfo)
-    .subscribe((res: HttpResponse<DealerServiceInfoModelDTO[]>) => {
-      this.dealerServiceData = res.body;
+    .subscribe((res: DealerServiceInfoModelDTO[]) => {
+      this.dealerServiceData = res;
       this.OnSubmit.emit(this.dealerServiceData);
-      this.router.navigate(['/listDealerServiceInfoPage']);
+      // this.router.navigate(['/listDealerServiceInfoPage']);
       //this.totalRecordsQty = res.headers.get("totalRecordsQty");
     }, error => this.errors = parseAPIErrors(error));
   }
