@@ -16,15 +16,17 @@ export class ListDealerInfoDataComponent implements OnInit {
   @Input()
   data: any = [];
 
+  @Input()
   dealerServiceData: DealerServiceInfoModelDTO[] = [];
 
   constructor(private router: Router) { }
   ngOnInit(): void {
- 
+    console.log(this.dealerServiceData);
   }
 
   getdata(data: any){
     this.dealerServiceData = this.data
+    
   }
 
   columnsToShow = ['userId', 'firstName', 'lastName', 'action'];

@@ -7,24 +7,24 @@
         #table mat-table [dataSource]="dealerServiceData" class="mat-elevation-z8 tabla-indice">
             <ng-container matColumnDef="userId">
                 <th mat-header-cell *matHeaderCellDef>UserID</th>
-                <th mat-cell *matCellDef="let element">{{element.userID}}</th>
+                <th mat-cell *matCellDef="let element">{{element.UserID}}</th>
             </ng-container>
             <ng-container matColumnDef="firstName">
                 <th mat-header-cell *matHeaderCellDef>First Name</th>
-                <th mat-cell *matCellDef="let element">{{element.userLogin}}</th>
+                <th mat-cell *matCellDef="let element">{{element.UserLogin}}</th>
             </ng-container>
             <ng-container matColumnDef="lastName">
                 <th mat-header-cell *matHeaderCellDef>Last Name</th>
-                <th mat-cell *matCellDef="let element">{{element.userLastName}}</th>
+                <th mat-cell *matCellDef="let element">{{element.UserLastName}}</th>
             </ng-container>
             <ng-container matColumnDef="action">
                 <th mat-header-cell *matHeaderCellDef>Action</th>
                 <th mat-cell *matCellDef="let element">
                 <a routerLink="/generos/editar/{{element.UserID}}"
-                    mat-flat-button color="primary" *ngIf="element.userLogin !== null">
+                    mat-flat-button color="primary" *ngIf="element.UserLogin !== null">
                         More Info
                 </a>
-                <button mat-flat-button color="warn" *ngIf="element.userLogin === null">Delete</button>
+                <button mat-flat-button color="warn" *ngIf="element.UserLogin === null">Delete</button>
             </th>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="columnsToShow"></tr>
